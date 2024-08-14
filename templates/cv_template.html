@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ cv.name }}'s CV</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            CV Creator
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            {% if cv.photo %}
+            <div class="photo">
+                <img src="{{ url_for('static', filename=cv.photo) }}" alt="Photo of {{ cv.name }}">
+            </div>
+            {% endif %}
+           
+            <h1>{{ cv.name }}</h1>
+            <p><strong>Phone:</strong> {{ cv.phone }}</p>
+            <p><strong>Email:</strong> {{ cv.email }}</p>
+
+            
+
+            <h2>Experience</h2>
+            <p>{{ cv.experience }}</p>
+
+            <h2>Education</h2>
+            <p>{{ cv.education }}</p>
+
+            <h2>Skills</h2>
+            <p>{{ cv.skills }}</p>
+
+            <h2>Languages</h2>
+            <p>{{ cv.languages }}</p>
+
+            <h2>Send us a letter:</h2>
+            <p>{{ cv.letter }}</p>
+        </div>
+    </div>
+</body>
+</html>

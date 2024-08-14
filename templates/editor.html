@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Editor - CVBuilder</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            CV Creator
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <h1>Create Your CV</h1>
+            <form action="/editor" method="POST" enctype="multipart/form-data">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Telephone:</label>
+                <input type="number" id="phone" name="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="photo">Upload Photo</label>
+                <input type="file" id="photo" name="photo">
+
+                <label for="experience">Experience</label>
+                <textarea id="experience" name="experience" required></textarea>
+
+                <label for="education">Education</label>
+                <textarea id="education" name="education" required></textarea>
+
+                <label for="skills">Skills</label>
+                <input type="text" id="skills" name="skills" required>
+
+                <label for="languages">Languages</label>
+                <input type="text" id="languages" name="languages" required>
+
+                <label for="letter>letter</label>
+                <textarea id="letter" name="letter" required></textarea>
+
+
+                <button type="submit">Save CV</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
